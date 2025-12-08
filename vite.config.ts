@@ -12,6 +12,8 @@ export default defineConfig({
         dirname(fileURLToPath(import.meta.url)),
         "src/components"
       ),
+      "@types": resolve(dirname(fileURLToPath(import.meta.url)), "src/types"),
+      "@config": resolve(dirname(fileURLToPath(import.meta.url)), "src/config"),
     },
   },
 });
