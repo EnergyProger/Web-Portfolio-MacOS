@@ -1,4 +1,9 @@
-import type { INavIcon, INavLink } from "@types";
+import type {
+  FontWeightType,
+  IFontWeightConfig,
+  INavIcon,
+  INavLink,
+} from "@types";
 
 export const navLinks: INavLink[] = [
   { id: 1, name: "Projects" },
@@ -24,3 +29,8 @@ export const navIcons: INavIcon[] = [
     img: "/icons/mode.svg",
   },
 ];
+
+export const FONT_WEIGHTS: Record<FontWeightType, IFontWeightConfig> = {
+  title: { min: 400, max: 900, default: 400 },
+  subtitle: { min: 100, max: 400, default: 100 },
+};
