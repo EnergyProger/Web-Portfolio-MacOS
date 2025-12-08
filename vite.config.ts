@@ -14,6 +14,8 @@ export default defineConfig({
       ),
       "@types": resolve(dirname(fileURLToPath(import.meta.url)), "src/types"),
       "@config": resolve(dirname(fileURLToPath(import.meta.url)), "src/config"),
+      "@hooks": resolve(dirname(fileURLToPath(import.meta.url)), "src/hooks"),
+      "@utils": resolve(dirname(fileURLToPath(import.meta.url)), "src/utils"),
     },
   },
 });
