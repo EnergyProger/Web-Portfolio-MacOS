@@ -16,6 +16,10 @@ export default defineConfig({
       "@config": resolve(dirname(fileURLToPath(import.meta.url)), "src/config"),
       "@hooks": resolve(dirname(fileURLToPath(import.meta.url)), "src/hooks"),
       "@utils": resolve(dirname(fileURLToPath(import.meta.url)), "src/utils"),
+      "@constants": resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        "src/constants"
+      ),
     },
   },
 });
