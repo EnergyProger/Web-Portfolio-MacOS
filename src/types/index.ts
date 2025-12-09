@@ -15,3 +15,10 @@ export interface IFontWeightConfig {
 }
 
 export type FontWeightType = "title" | "subtitle";
+
+export interface IDockApp {
+  id: string;
+  name: string;
+  icon: string;
+  canOpen: boolean;
+}
