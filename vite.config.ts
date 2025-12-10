@@ -20,6 +20,7 @@ export default defineConfig({
         dirname(fileURLToPath(import.meta.url)),
         "src/constants"
       ),
+      "@store": resolve(dirname(fileURLToPath(import.meta.url)), "src/store"),
     },
   },
 });

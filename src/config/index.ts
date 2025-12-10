@@ -4,6 +4,7 @@ import type {
   IFontWeightConfig,
   INavIcon,
   INavLink,
+  IWindow,
 } from "@types";
 
 export const navLinks: INavLink[] = [
@@ -74,3 +75,16 @@ export const dockApps: IDockApp[] = [
     canOpen: false,
   },
 ];
+
+export const INITIAL_Z_INDEX = 1000;
+
+export const WINDOW_CONFIG: Record<string, IWindow> = {
+  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+};

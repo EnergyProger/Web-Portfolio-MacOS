@@ -4,14 +4,29 @@ import { Tooltip } from "react-tooltip";
 import type { IDockApp } from "@types";
 import { useDockAnimation } from "@hooks/useDockAnimation";
 import { DOCK_APP_ICON_DATA_TOOLTIP_DELAY_SHOW } from "@constants";
+import useWindowStore from "@store/window";
 
 const Dock = () => {
+  const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef<HTMLDivElement>(null);
 
   useDockAnimation(dockRef);
 
   const handleToggleApp = (app: IDockApp) => {
-    //TODO: Implement Open Window Logic
+    if (!app.canOpen) return;
+
+    const window = windows[app.id];
+
+    if (!window) {
+      console.error(`Window ${app.id} not found`);
+      return;
+    }
+
+    if (window.isOpen) {
+      closeWindow(app.id);
+    } else {
+      openWindow(app.id);
+    }
   };
 
   return (
