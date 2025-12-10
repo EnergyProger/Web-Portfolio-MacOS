@@ -27,6 +27,7 @@ const useWindowStore = create<IWindowStore>()(
     focusWindow: (windowKey) =>
       set((state) => {
         const window = state.windows[windowKey];
+        if (!window) return;
         window.zIndex = state.nextZIndex++;
       }),
   }))
