@@ -36,3 +36,8 @@ export interface IWindowStore {
   closeWindow: (windowKey: string) => void;
   focusWindow: (windowKey: string) => void;
 }
+
+export interface ITechStack {
+  category: string;
+  items: string[];
+}

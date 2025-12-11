@@ -4,6 +4,7 @@ import type {
   IFontWeightConfig,
   INavIcon,
   INavLink,
+  ITechStack,
   IWindow,
 } from "@types";
 
@@ -89,3 +90,26 @@ export const WINDOW_CONFIG: Record<string, IWindow> = {
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
+
+export const techStack: ITechStack[] = [
+  {
+    category: "Frontend",
+    items: ["JavaScript", "TypeScript", "React.js", "Next.js"],
+  },
+  {
+    category: "Styling",
+    items: ["Tailwind CSS", "SASS", "CSS", "LESS"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "PHP"],
+  },
+  {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
+  },
+  {
+    category: "Dev Tools",
+    items: ["Git", "GitHub", "Docker"],
+  },
+];
