@@ -1,13 +1,17 @@
 import { techStack } from "@config";
 import WindowWrapper from "@hoc/WindowWrapper";
-import useRenderTime from "@hooks/useRenderTime";
+import { useRenderTime } from "@hooks/useRenderTime";
 import TerminalHeader from "./TerminalHeader";
 import TechStackList from "./TechStackList";
 import TerminalFooter from "./TerminalFooter";
 
-const Terminal = () => {
+interface Props {
+  isOpen?: boolean;
+}
+
+const Terminal = ({ isOpen = false }: Props) => {
   const techStackLength = techStack.length;
-  const renderTime = useRenderTime();
+  const renderTime = useRenderTime(isOpen);
 
   return (
     <>
