@@ -5,7 +5,7 @@ import { useWindowAnimation } from "@hooks/useWindowAnimation";
 import { useWindowDraggable } from "@hooks/useWindowDraggable";
 import { useWindowVisibility } from "@hooks/useWindowVisibility";
 
-type WindowWrapperProps = Record<string, unknown>;
+type WindowWrapperProps = Record<string, unknown> & { isOpen?: boolean };
 type WindowWrapperComponent<P extends WindowWrapperProps> = ComponentType<P>;
 
 const WindowWrapper = <P extends WindowWrapperProps>(
@@ -23,7 +23,7 @@ const WindowWrapper = <P extends WindowWrapperProps>(
 
     return (
       <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
-        <Component {...props} />
+        <Component {...props} isOpen={isOpen} />
       </section>
     );
   };
