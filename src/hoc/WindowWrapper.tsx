@@ -5,10 +5,12 @@ import { useWindowAnimation } from "@hooks/useWindowAnimation";
 import { useWindowDraggable } from "@hooks/useWindowDraggable";
 import { useWindowVisibility } from "@hooks/useWindowVisibility";
 
-type WindowWrapperProps = Record<string, unknown> & { isOpen?: boolean };
-type WindowWrapperComponent<P extends WindowWrapperProps> = ComponentType<P>;
+type InjectedProps = { isOpen: boolean };
+type WindowWrapperComponent<P extends Record<string, unknown>> = ComponentType<
+  P & InjectedProps
+>;
 
-const WindowWrapper = <P extends WindowWrapperProps>(
+const WindowWrapper = <P extends Record<string, unknown>>(
   Component: WindowWrapperComponent<P>,
   windowKey: string
 ) => {

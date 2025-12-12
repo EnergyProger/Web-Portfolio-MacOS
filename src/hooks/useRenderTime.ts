@@ -1,5 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+const now = () =>
+  typeof performance !== "undefined" && typeof performance.now === "function"
+    ? performance.now()
+    : Date.now();
+
 /**
  * Custom hook to measure and track component render time.
  * Measures the time from component initialization to after the DOM has painted.
@@ -14,10 +22,10 @@ export const useRenderTime = (isOpen: boolean): number => {
 
   // useLayoutEffect runs synchronously before the browser paints
   // This captures the start time when the window opens
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // Detect transition from closed to open
     if (isOpen && !wasOpenRef.current) {
-      startTimeRef.current = performance.now();
+      startTimeRef.current = now();
     }
     wasOpenRef.current = isOpen;
   }, [isOpen]);
@@ -26,7 +34,7 @@ export const useRenderTime = (isOpen: boolean): number => {
   // This captures the end time and calculates the render duration
   useEffect(() => {
     if (isOpen && startTimeRef.current !== null) {
-      const endTime = performance.now();
+      const endTime = now();
       const elapsed = endTime - startTimeRef.current;
       setRenderTime(elapsed);
     }
