@@ -20,6 +20,7 @@ export interface IDockApp {
   id: string;
   name: string;
   icon: string;
+  icon_webp: string;
   canOpen: boolean;
 }
 
@@ -40,4 +41,13 @@ export interface IWindowStore {
 export interface ITechStack {
   category: string;
   items: string[];
+}
+
+export interface IBlogPost {
+  id: number;
+  date: string;
+  title: string;
+  image: string;
+  image_webp: string;
+  link: string;
 }

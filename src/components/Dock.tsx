@@ -44,12 +44,15 @@ const Dock = () => {
               disabled={!app.canOpen}
               onClick={() => handleToggleApp(app)}
             >
-              <img
-                src={`/images/${app.icon}`}
-                alt={app.name}
-                loading="lazy"
-                className={app.canOpen ? "" : "opacity-60"}
-              />
+              <picture>
+                <source type="image/webp" srcSet={`/images/${app.icon_webp}`} />
+                <img
+                  src={`/images/${app.icon}`}
+                  alt={app.name}
+                  loading="lazy"
+                  className={app.canOpen ? "" : "opacity-60"}
+                />
+              </picture>
             </button>
           </div>
         ))}

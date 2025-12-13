@@ -1,5 +1,6 @@
 import type {
   FontWeightType,
+  IBlogPost,
   IDockApp,
   IFontWeightConfig,
   INavIcon,
@@ -43,36 +44,42 @@ export const dockApps: IDockApp[] = [
     id: "finder",
     name: "Portfolio",
     icon: "finder.png",
+    icon_webp: "finder.webp",
     canOpen: true,
   },
   {
     id: "safari",
     name: "Articles",
     icon: "safari.png",
+    icon_webp: "safari.webp",
     canOpen: true,
   },
   {
     id: "photos",
     name: "Gallery",
     icon: "photos.png",
+    icon_webp: "photos.webp",
     canOpen: true,
   },
   {
     id: "contact",
     name: "Contact",
     icon: "contact.png",
+    icon_webp: "contact.webp",
     canOpen: true,
   },
   {
     id: "terminal",
     name: "Skills",
     icon: "terminal.png",
+    icon_webp: "terminal.webp",
     canOpen: true,
   },
   {
     id: "trash",
     name: "Archive",
     icon: "trash.png",
+    icon_webp: "trash.webp",
     canOpen: true,
   },
 ];
@@ -111,5 +118,17 @@ export const techStack: ITechStack[] = [
   {
     category: "Dev Tools",
     items: ["Git", "GitHub", "Docker"],
+  },
+];
+
+export const blogPosts: IBlogPost[] = [
+  {
+    id: 1,
+    date: "Dec 31, 2023",
+    title:
+      "METHOD OF DETECTING OUTWARD MANIFESTATIONS OF VIOLENCE IN VIDEO STREAMS USING NEURAL NETWORK TOOLS",
+    image: "/images/blog-1.png",
+    image_webp: "/images/blog-1.webp",
+    link: "https://heraldts.khmnu.edu.ua/index.php/heraldts/article/view/414/418",
   },
 ];
