@@ -1,6 +1,7 @@
 export interface INavLink {
   id: number;
   name: string;
+  type: string;
 }
 
 export interface INavIcon {

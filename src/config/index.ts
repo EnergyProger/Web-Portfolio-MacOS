@@ -10,9 +10,9 @@ import type {
 } from "@types";
 
 export const navLinks: INavLink[] = [
-  { id: 1, name: "Projects" },
-  { id: 2, name: "Resume" },
-  { id: 3, name: "Contact" },
+  { id: 1, name: "Projects", type: "finder" },
+  { id: 2, name: "Resume", type: "resume" },
+  { id: 3, name: "Contact", type: "contact" },
 ];
 
 export const navIcons: INavIcon[] = [
