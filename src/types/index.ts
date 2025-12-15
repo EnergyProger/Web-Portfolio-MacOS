@@ -52,3 +52,35 @@ export interface IBlogPost {
   image_webp: string;
   link: string;
 }
+
+export interface IFile {
+  id: string | number;
+  name: string;
+  icon: string;
+  icon_webp: string;
+  kind: string;
+  fileType?: string;
+  position?: string;
+  description?: string[];
+  href?: string;
+  imageUrl?: string;
+  children?: IFile[];
+  windowPosition?: string;
+  subtitle?: string;
+  imageUrl_webp?: string;
+}
+
+export interface ILocation {
+  id: string | number;
+  type: string;
+  name: string;
+  icon: string;
+  kind: string;
+  children: IFile[];
+}
+
+export interface ILocationStore {
+  activeLocation: ILocation | IFile | null;
+  setActiveLocation: (location?: ILocation | IFile | null) => void;
+  resetActiveLocation: () => void;
+}

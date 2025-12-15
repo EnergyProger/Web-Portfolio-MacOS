@@ -3,6 +3,7 @@ import type {
   IBlogPost,
   IDockApp,
   IFontWeightConfig,
+  ILocation,
   INavIcon,
   INavLink,
   ITechStack,
@@ -132,3 +133,261 @@ export const blogPosts: IBlogPost[] = [
     link: "https://heraldts.khmnu.edu.ua/index.php/heraldts/article/view/414/418",
   },
 ];
+
+const WORK_LOCATION: ILocation = {
+  id: "loc-work",
+  type: "work",
+  name: "Work",
+  icon: "/icons/work.svg",
+  kind: "folder",
+  children: [
+    {
+      id: "work-thingiverse",
+      name: "Thingiverse - Digital Designs for Physical Objects",
+      icon: "/images/folder.png",
+      icon_webp: "/images/folder.webp",
+      kind: "folder",
+      position: "top-10 left-5",
+      windowPosition: "top-[5vh] left-5",
+      children: [
+        {
+          id: "thingiverse-txt",
+          name: "Thingiverse Project.txt",
+          icon: "/images/txt.png",
+          icon_webp: "/images/txt.webp",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "Thingiverse is a website dedicated to the sharing of user-created digital design files. It is widely considered the world's largest 3D printing community and file repository.",
+            `It’s built:
+            - Frontend: TypeScript, React.js, Three.js, SASS, Redux, Redux-Saga
+            - Backend: PHP
+            - Database: MySQL
+            - Testing: Jest, Cypress
+            - Dev Tools: Git, GitHub, Docker
+            `,
+          ],
+        },
+        {
+          id: "thingiverse-url",
+          name: "thingiverse.com",
+          icon: "/images/safari.png",
+          icon_webp: "/images/safari.webp",
+          kind: "file",
+          fileType: "url",
+          href: "https://www.thingiverse.com/",
+          position: "top-10 right-20",
+        },
+        {
+          id: "thingiverse-img",
+          name: "thingiverse.png",
+          icon: "/images/image.png",
+          icon_webp: "/images/image.webp",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/project-1.png",
+        },
+      ],
+    },
+    {
+      id: "work-cadtoearth",
+      name: "CADtoEarth",
+      icon: "/images/folder.png",
+      icon_webp: "/images/folder.webp",
+      kind: "folder",
+      position: "top-52 right-80",
+      windowPosition: "top-[20vh] left-7",
+      children: [
+        {
+          id: "cadtoearth-txt",
+          name: "CADtoEarth Project.txt",
+          icon: "/images/txt.png",
+          icon_webp: "/images/txt.webp",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 right-10",
+          description: [
+            "CADtoEarth is a technology demonstration of connecting popular CAD modeling software packages with Cesium, a geospatial 3D mapping platform for creating virtual globes.",
+            `It’s built:
+            - Frontend: TypeScript, React.js, Three.js, LESS
+            - Backend: Express.js, ASP.NET Core
+            - Database: MongoDB, Microsoft SQL Server
+            - Testing: Jest, Cypress
+            - Dev Tools: Git, Azure DevOps Server
+            `,
+          ],
+        },
+        {
+          id: "cadtoearth-url",
+          name: "CADtoEarth.com",
+          icon: "/images/safari.png",
+          icon_webp: "/images/safari.webp",
+          kind: "file",
+          fileType: "url",
+          href: "https://www.amcbridge.com/technology-demos/labs/cadtoearth",
+          position: "top-20 left-20",
+        },
+        {
+          id: "cadtoearth-img",
+          name: "CADtoEarth.png",
+          icon: "/images/image.png",
+          icon_webp: "/images/image.webp",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 left-80",
+          imageUrl: "/images/project-2.png",
+        },
+      ],
+    },
+    {
+      id: "work-3dviewer",
+      name: "3D Model Viewer based on WebGL",
+      icon: "/images/folder.png",
+      icon_webp: "/images/folder.webp",
+      kind: "folder",
+      position: "top-10 left-80",
+      windowPosition: "top-[33vh] left-7",
+      children: [
+        {
+          id: "3dviewer-txt",
+          name: "3D Model Viewer based on WebGL Project.txt",
+          icon: "/images/txt.png",
+          icon_webp: "/images/txt.webp",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "3D Model Viewer based on WebGL is a web application that allows you to upload 3D models to the browser and interact with them.",
+            "This application has the following features: movement along a plane, rotation, intersection with a plane, zoom to a point on a 3D model.",
+            `It’s built:
+            - Frontend: TypeScript, React.js, Three.js, SASS
+            - Backend: Express.js, ASP.NET Core
+            - Database: MongoDB, Microsoft SQL Server
+            - Testing: Jest, Cypress
+            - Dev Tools: Git, GitLab
+            `,
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+const ABOUT_LOCATION: ILocation = {
+  id: "loc-about",
+  type: "about",
+  name: "About me",
+  icon: "/icons/info.svg",
+  kind: "folder",
+  children: [
+    {
+      id: "about-me-png",
+      name: "me.png",
+      icon: "/images/image.png",
+      icon_webp: "/images/image.webp",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-5",
+      imageUrl: "/images/user-1.png",
+      imageUrl_webp: "/images/user-1.webp",
+    },
+    {
+      id: "about-casual-png",
+      name: "casual-me.png",
+      icon: "/images/image.png",
+      icon_webp: "/images/image.webp",
+      kind: "file",
+      fileType: "img",
+      position: "top-28 right-72",
+      imageUrl: "/images/user-2.png",
+      imageUrl_webp: "/images/user-2.webp",
+    },
+    {
+      id: "about-conf-png",
+      name: "conference-me.png",
+      icon: "/images/image.png",
+      icon_webp: "/images/image.webp",
+      kind: "file",
+      fileType: "img",
+      position: "top-52 left-80",
+      imageUrl: "/images/user-3.png",
+      imageUrl_webp: "/images/user-3.webp",
+    },
+    {
+      id: "about-desc-txt",
+      name: "about-me.txt",
+      icon: "/images/txt.png",
+      icon_webp: "/images/txt.webp",
+      kind: "file",
+      fileType: "txt",
+      position: "top-60 left-5",
+      subtitle: "Meet the Developer Behind the Code",
+      imageUrl: "/images/user-1.png",
+      imageUrl_webp: "/images/user-1.webp",
+      description: [
+        "Hey! I’m Eduard 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
+        "I specialize in JavaScript, Typescript, React, Node.js, PHP, C# - and I love making things feel smooth, fast, and just a little bit delightful.",
+        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
+      ],
+    },
+  ],
+};
+
+const RESUME_LOCATION: ILocation = {
+  id: "loc-resume",
+  type: "resume",
+  name: "Resume",
+  icon: "/icons/file.svg",
+  kind: "folder",
+  children: [
+    {
+      id: "resume-pdf",
+      name: "Resume.pdf",
+      icon: "/images/pdf.png",
+      icon_webp: "/images/pdf.webp",
+      kind: "file",
+      fileType: "pdf",
+    },
+  ],
+};
+
+const TRASH_LOCATION: ILocation = {
+  id: "loc-trash",
+  type: "trash",
+  name: "Trash",
+  icon: "/icons/trash.svg",
+  kind: "folder",
+  children: [
+    {
+      id: "trash-1",
+      name: "trash-1.png",
+      icon: "/images/image.png",
+      icon_webp: "/images/image.webp",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-10",
+      imageUrl: "/images/trash-1.png",
+      imageUrl_webp: "/images/trash-1.webp",
+    },
+    {
+      id: "trash-2",
+      name: "trash-2.png",
+      icon: "/images/image.png",
+      icon_webp: "/images/image.webp",
+      kind: "file",
+      fileType: "img",
+      position: "top-40 left-80",
+      imageUrl: "/images/trash-2.png",
+      imageUrl_webp: "/images/trash-2.webp",
+    },
+  ],
+};
+
+export const locations = {
+  work: WORK_LOCATION,
+  about: ABOUT_LOCATION,
+  resume: RESUME_LOCATION,
+  trash: TRASH_LOCATION,
+};
