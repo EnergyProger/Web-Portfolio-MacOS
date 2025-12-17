@@ -12,12 +12,9 @@ const FinderContent = () => {
       return openWindow("resume");
     } else if (item.kind === FINDER_WINDOW_KIND.FOLDER) {
       return setActiveLocation(item);
-    } else if (
-      [FINDER_WINDOW_FILETYPE.URL].includes(item.fileType!) &&
-      item.href
-    ) {
+    } else if (item.fileType === FINDER_WINDOW_FILETYPE.URL && item.href) {
       return window.open(item.href, "_blank");
-    } else {
+    } else if (item.fileType) {
       return openWindow(`${item.fileType}${item.kind}`, item);
     }
   };
