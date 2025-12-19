@@ -6,6 +6,7 @@ import type {
   ILocation,
   INavIcon,
   INavLink,
+  ISocial,
   ITechStack,
   IWindow,
 } from "@types";
@@ -391,3 +392,34 @@ export const locations = {
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
 };
+
+export const socials: ISocial[] = [
+  {
+    id: 1,
+    text: "Github",
+    icon: "/icons/github.svg",
+    bg: "#000000",
+    link: "#",
+  },
+  {
+    id: 2,
+    text: "Telegram",
+    icon: "/icons/telegram.svg",
+    bg: "#0088cc",
+    link: "#",
+  },
+  {
+    id: 3,
+    text: "Gmail",
+    icon: "/icons/gmail.svg",
+    bg: "#ea4335",
+    link: "mailto:test@gmail.com",
+  },
+  {
+    id: 4,
+    text: "LinkedIn",
+    icon: "/icons/linkedin.svg",
+    bg: "#0077b5",
+    link: "#",
+  },
+];

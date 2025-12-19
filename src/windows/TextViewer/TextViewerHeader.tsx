@@ -6,7 +6,7 @@ interface Props {
 
 const TextViewerHeader = ({ title }: Props) => {
   return (
-    <div id="window-header">
+    <div className="window-header">
       <WindowControls target="txtfile" />
       <h2>{title}</h2>
     </div>

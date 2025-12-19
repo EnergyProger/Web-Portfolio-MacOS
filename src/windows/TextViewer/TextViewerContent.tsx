@@ -16,7 +16,7 @@ const TextViewerContent = ({ data }: Props) => {
             <img
               src={data.imageUrl}
               alt={data.name}
-              className="w-full h-auto rounded"
+              className="w-full max-h-[50vh] h-auto rounded"
             />
           </picture>
         </div>

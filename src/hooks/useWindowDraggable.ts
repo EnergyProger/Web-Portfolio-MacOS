@@ -5,6 +5,7 @@ import type { RefObject } from "react";
 interface UseWindowDraggableOptions {
   ref: RefObject<HTMLElement | null>;
   onFocus: () => void;
+  dependencies?: unknown[];
 }
 
 /**
@@ -13,15 +14,24 @@ interface UseWindowDraggableOptions {
 export const useWindowDraggable = ({
   ref,
   onFocus,
+  dependencies = [],
 }: UseWindowDraggableOptions) => {
-  useGSAP(() => {
-    const element = ref.current;
-    if (!element) return;
+  useGSAP(
+    () => {
+      const element = ref.current;
+      if (!element) return;
 
-    const [draggableInstance] = Draggable.create(element, {
-      onPress: onFocus,
-    });
+      const trigger = element.querySelector(".window-header");
 
-    return () => draggableInstance.kill();
-  }, []);
+      if (!trigger) return;
+
+      const [draggableInstance] = Draggable.create(element, {
+        trigger,
+        onPress: onFocus,
+      });
+
+      return () => draggableInstance.kill();
+    },
+    { dependencies }
+  );
 };

@@ -84,3 +84,11 @@ export interface ILocationStore {
   setActiveLocation: (location?: ILocation | IFile | null) => void;
   resetActiveLocation: () => void;
 }
+
+export interface ISocial {
+  id: number;
+  text: string;
+  icon: string;
+  bg: string;
+  link: string;
+}

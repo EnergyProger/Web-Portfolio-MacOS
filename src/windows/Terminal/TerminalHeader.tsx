@@ -6,7 +6,7 @@ interface Props {
 
 const TerminalHeader = ({ title }: Props) => {
   return (
-    <div id="window-header">
+    <div className="window-header">
       <WindowControls target="terminal" />
       <h2>{title}</h2>
     </div>

@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 
 const ResumeHeader = () => {
   return (
-    <div id="window-header">
+    <div className="window-header">
       <WindowControls target="resume" />
       <h2>Resume.pdf</h2>
       <a
