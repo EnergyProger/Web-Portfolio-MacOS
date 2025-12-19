@@ -6,7 +6,7 @@ interface Props {
 
 const ImageViewerHeader = ({ title }: Props) => {
   return (
-    <div id="window-header">
+    <div className="window-header">
       <WindowControls target="imgfile" />
       <h2>{title}</h2>
     </div>

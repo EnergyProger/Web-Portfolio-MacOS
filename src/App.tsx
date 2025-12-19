@@ -9,6 +9,7 @@ import Resume from "@windows/Resume";
 import Finder from "@windows/Finder";
 import TextViewer from "@windows/TextViewer";
 import ImageViewer from "@windows/ImageViewer";
+import Contact from "@windows/Contact";
 
 gsap.registerPlugin(Draggable);
 
@@ -24,6 +25,7 @@ const App = () => {
       <Finder />
       <TextViewer />
       <ImageViewer />
+      <Contact />
     </main>
   );
 };

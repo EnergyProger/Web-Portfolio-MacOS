@@ -20,7 +20,11 @@ const WindowWrapper = <P extends Record<string, unknown>>(
     const ref = useRef<HTMLElement>(null);
 
     useWindowAnimation({ ref, isOpen });
-    useWindowDraggable({ ref, onFocus: () => focusWindow(windowKey) });
+    useWindowDraggable({
+      ref,
+      onFocus: () => focusWindow(windowKey),
+      dependencies: [isOpen],
+    });
     useWindowVisibility({ ref, isOpen });
 
     return (

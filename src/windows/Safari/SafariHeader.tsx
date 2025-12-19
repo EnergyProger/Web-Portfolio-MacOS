@@ -12,7 +12,7 @@ import {
 
 const SafariHeader = () => {
   return (
-    <div id="window-header">
+    <div className="window-header">
       <WindowControls target="safari" />
       <PanelLeft className="ml-10 icon" />
       <div className="flex items-center gap-1 ml-5">
