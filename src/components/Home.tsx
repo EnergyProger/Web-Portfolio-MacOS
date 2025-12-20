@@ -23,6 +23,7 @@ const Home = () => {
       <ul>
         {projects.map((project) => (
           <li
+            key={project.id}
             data-id={project.id}
             className={clsx("group folder", project.windowPosition)}
             onClick={() => openProjectFinder(project)}

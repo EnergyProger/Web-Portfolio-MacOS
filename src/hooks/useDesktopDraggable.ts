@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { Draggable } from "gsap/all";
 import type { IFile } from "@types";
 
+gsap.registerPlugin(Draggable);
+
 interface UseDesktopDraggableProps {
   items: IFile[];
 }
@@ -18,9 +20,17 @@ interface UseDesktopDraggableProps {
  */
 export const useDesktopDraggable = ({ items }: UseDesktopDraggableProps) => {
   useGSAP(() => {
-    const savedPositions = JSON.parse(
-      localStorage.getItem("desktop_positions") || "{}"
-    );
+    let savedPositions: Record<string, { x: number; y: number }> = {};
+    try {
+      savedPositions = JSON.parse(
+        localStorage.getItem("desktop_positions") || "{}"
+      );
+    } catch (error) {
+      console.error(
+        "Failed to parse desktop positions from localStorage:",
+        error
+      );
+    }
 
     items.forEach((item) => {
       const pos = savedPositions[item.id];
@@ -29,13 +39,10 @@ export const useDesktopDraggable = ({ items }: UseDesktopDraggableProps) => {
       }
     });
 
-    Draggable.create(".folder", {
+    const draggables = Draggable.create(".folder", {
       onDragEnd: function () {
         const id = this.target.getAttribute("data-id");
         if (id) {
-          const savedPositions = JSON.parse(
-            localStorage.getItem("desktop_positions") || "{}"
-          );
           savedPositions[id] = { x: this.x, y: this.y };
           localStorage.setItem(
             "desktop_positions",
@@ -44,5 +51,9 @@ export const useDesktopDraggable = ({ items }: UseDesktopDraggableProps) => {
         }
       },
     });
+
+    return () => {
+      draggables.forEach((draggable) => draggable.kill());
+    };
   }, [items]);
 };
