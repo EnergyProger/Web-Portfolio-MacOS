@@ -10,6 +10,7 @@ import Finder from "@windows/Finder";
 import TextViewer from "@windows/TextViewer";
 import ImageViewer from "@windows/ImageViewer";
 import Contact from "@windows/Contact";
+import Home from "@components/Home";
 
 gsap.registerPlugin(Draggable);
 
@@ -26,6 +27,7 @@ const App = () => {
       <TextViewer />
       <ImageViewer />
       <Contact />
+      <Home />
     </main>
   );
 };

@@ -54,7 +54,7 @@ export interface IBlogPost {
 }
 
 export interface IFile {
-  id: string | number;
+  id: string;
   name: string;
   icon: string;
   icon_webp: string;
@@ -71,7 +71,7 @@ export interface IFile {
 }
 
 export interface ILocation {
-  id: string | number;
+  id: string;
   type: string;
   name: string;
   icon: string;
