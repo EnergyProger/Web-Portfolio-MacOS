@@ -3,6 +3,8 @@ import type {
   IBlogPost,
   IDockApp,
   IFontWeightConfig,
+  IGallery,
+  IGalleryPhotoLink,
   ILocation,
   INavIcon,
   INavLink,
@@ -57,10 +59,10 @@ export const dockApps: IDockApp[] = [
     canOpen: true,
   },
   {
-    id: "photos",
+    id: "gallery",
     name: "Gallery",
-    icon: "photos.png",
-    icon_webp: "photos.webp",
+    icon: "gallery.png",
+    icon_webp: "gallery.webp",
     canOpen: true,
   },
   {
@@ -93,7 +95,7 @@ export const WINDOW_CONFIG: Record<string, IWindow> = {
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  gallery: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -421,5 +423,56 @@ export const socials: ISocial[] = [
     icon: "/icons/linkedin.svg",
     bg: "#0077b5",
     link: "#",
+  },
+];
+
+export const photosLinks: IGalleryPhotoLink[] = [
+  {
+    id: 1,
+    icon: "/icons/gicon-1.svg",
+    title: "Library",
+  },
+  {
+    id: 2,
+    icon: "/icons/gicon-2.svg",
+    title: "Memories",
+  },
+  {
+    id: 3,
+    icon: "/icons/file.svg",
+    title: "Places",
+  },
+  {
+    id: 4,
+    icon: "/icons/gicon-3.svg",
+    title: "People",
+  },
+  {
+    id: 5,
+    icon: "/icons/gicon-4.svg",
+    title: "Favorites",
+  },
+];
+
+export const gallery: IGallery[] = [
+  {
+    id: 1,
+    img: "/images/gal-1.png",
+    img_webp: "/images/gal-1.webp",
+  },
+  {
+    id: 2,
+    img: "/images/gal-2.png",
+    img_webp: "/images/gal-2.webp",
+  },
+  {
+    id: 3,
+    img: "/images/gal-3.png",
+    img_webp: "/images/gal-3.webp",
+  },
+  {
+    id: 4,
+    img: "/images/gal-4.png",
+    img_webp: "/images/gal-4.webp",
   },
 ];
