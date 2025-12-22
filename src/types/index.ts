@@ -92,3 +92,15 @@ export interface ISocial {
   bg: string;
   link: string;
 }
+
+export interface IGallery {
+  id: number;
+  img: string;
+  img_webp: string;
+}
+
+export interface IGalleryPhotoLink {
+  id: number;
+  icon: string;
+  title: string;
+}

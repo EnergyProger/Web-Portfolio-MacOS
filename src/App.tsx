@@ -11,6 +11,7 @@ import TextViewer from "@windows/TextViewer";
 import ImageViewer from "@windows/ImageViewer";
 import Contact from "@windows/Contact";
 import Home from "@components/Home";
+import Gallery from "@windows/Gallery";
 
 gsap.registerPlugin(Draggable);
 
@@ -28,6 +29,7 @@ const App = () => {
       <ImageViewer />
       <Contact />
       <Home />
+      <Gallery />
     </main>
   );
 };
